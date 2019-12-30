@@ -1,17 +1,17 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
-export default function Login(props) {
+export default function SignUp(props) {
     console.log(props)
     return (
         <Formik
-            initialValues={{ username: '', password: '' }}
+            initialValues={{ username: '', password: '', email: '', location: '' }}
             onSubmit={(values) => {
                 axiosWithAuth()
-                    .post('#', { ...values })
+                    .post('#', { ...values, id: Date.now })
                     .then(res => {
-                        localStorage.setItem('token', res.data.payload);
-                        props.history.push('#')
+                        
+                        props.history.push('/login')
                     })
                     .catch(err => console.log(err))
             }}
@@ -19,8 +19,11 @@ export default function Login(props) {
             <Form>
                 <span>Username: </span><Field type='username' name='username'></Field>
                 <span>Password: </span><Field type='password' name='password'></Field>
+                <span>Email: </span><Field type='email' name='email'></Field>
+                <span>Location: </span><Field type='text' name='location'></Field>
+
                 <button type='submit'>
-                    Log In
+                    Sign Up
         </button>
             </Form>
         </Formik>
