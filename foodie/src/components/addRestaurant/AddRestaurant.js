@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
-import { axiosWithAuth } from '../utils/axiosWithAuth'
-import { StyledForm } from '../styles/formStyles'
+import { axiosWithAuth } from '../../utils/axiosWithAuth'
+import { StyledForm } from '../../styles/formStyles'
 export default function AddRestaurant(props) {
     console.log(props)
     return (
@@ -9,13 +9,14 @@ export default function AddRestaurant(props) {
             <Formik
                 initialValues={{ name: '', type: '', location: '', rating: '', photo: '' }}
                 onSubmit={(values) => {
-                    axiosWithAuth()
-                        .post('#', { ...values, id: Date.now() })
-                        .then(res => {
+                    console.log(values)
+                    // axiosWithAuth()
+                    //     .post('#', { ...values, id: Date.now() })
+                    //     .then(res => {
 
-                            props.history.push('#')
-                        })
-                        .catch(err => console.log(err))
+                    //         props.history.push('#')
+                    //     })
+                    //     .catch(err => console.log(err))
                 }}
             >
                 <Form>

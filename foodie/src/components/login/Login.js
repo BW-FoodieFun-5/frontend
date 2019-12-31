@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
-import { axiosWithAuth } from '../utils/axiosWithAuth'
-import { StyledForm } from '../styles/formStyles'
+import { axiosWithAuth } from '../../utils/axiosWithAuth'
+import { StyledForm } from '../../styles/formStyles'
 export default function Login(props) {
     console.log(props)
     return (
