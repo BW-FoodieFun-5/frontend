@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css';
-import SignUp from './components/SignUp'
+import SignupRoute from './components/signUp/SignupRoute'
 import LoginRoute from './components/login/LoginRoute'
 import AddRestaurantRoute from './components/addRestaurant/AddRestaurantRoute'
+import RestaurantViewRoute from './components/restaurantView/RestaurantViewRoute'
 import { Switch, Route } from 'react-router-dom'
+import PrivateRoute from './components/PrivateRoute'
 function App() {
   return (
     <div className="App">
@@ -11,9 +13,10 @@ function App() {
 
 
         <Switch>
-          <Route exact path="/login" component={LoginRoute} />
-          <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/addrestaurant" component={AddRestaurantRoute} />
+          <Route exact path="/login" ><LoginRoute /></Route>
+          <Route exact path="/signup" component={SignupRoute} />
+          <PrivateRoute exact path="/addrestaurant" component={AddRestaurantRoute} />
+          <PrivateRoute exact path="/restaurantview" component={RestaurantViewRoute} />
         </Switch>
 
       </header>

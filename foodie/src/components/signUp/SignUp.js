@@ -1,9 +1,11 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
-import { axiosWithAuth } from '../utils/axiosWithAuth'
-import { StyledForm } from '../styles/formStyles'
+import { axiosWithAuth } from '../../utils/axiosWithAuth'
+import { StyledForm } from '../../styles/formStyles'
+import { useHistory } from 'react-router-dom'
 export default function SignUp(props) {
     console.log(props)
+    let history = useHistory()
     return (
         <StyledForm>
             <Formik
@@ -13,7 +15,7 @@ export default function SignUp(props) {
                         .post('https://foodie-fun-chards.herokuapp.com/api/auth/register', { ...values, id: Date.now })
                         .then(res => {
                             console.log(res)
-                            props.history.push('/login')
+                            history.push('/login')
                         })
                         .catch(err => console.log(err))
                 }}
