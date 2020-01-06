@@ -1,11 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import SignUp from './components/SignUp'
-import Login from './components/login/Login'
 import LoginRoute from './components/login/LoginRoute'
 import AddRestaurantRoute from './components/addRestaurant/AddRestaurantRoute'
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 function App() {
   return (
     <div className="App">

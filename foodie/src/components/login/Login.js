@@ -12,7 +12,7 @@ export default function Login(props) {
                     axiosWithAuth()
                         .post('https://foodie-fun-chards.herokuapp.com/api/auth/login', { ...values })
                         .then(res => {
-                            console.log(res)
+                            
                             localStorage.setItem('token', res.data.token);
                             props.history.push('#')
                         })
