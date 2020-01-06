@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const StyledSideBar = styled.div`
-        height: 100vh;
+position: fixed;        
+height: 100vh;
         width: 15%;
         display: flex;
         flex-direction: column;
@@ -18,7 +19,7 @@ export const StyledSideBar = styled.div`
         }
         a{
             text-decoration: none;
-            font-size: 3rem;
+            font-size: 2rem;
             color: orange;
             &:hover{
                 color: black

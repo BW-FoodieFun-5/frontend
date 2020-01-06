@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledMainPage = styled.div`
-    height: 100vh;    
+       margin-left: 15%; 
     width: 84%;   
     display: flex;
     align-items: center;
