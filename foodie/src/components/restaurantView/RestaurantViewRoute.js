@@ -2,18 +2,18 @@ import React from 'react'
 import { StyledMainPage } from '../../styles/mainPageStyles'
 import { StyledApp } from '../../styles/appStyles'
 import { StyledSideBar } from '../../styles/sideBarStyles'
-import AddRestaurant from './AddRestaurant'
-import AddRestaurantBar from './AddRestaurantBar'
-export default function AddRestaurantRoute(props) {
+import RestaurantViewBar from './RestaurantViewBar'
+import RestaurantView from './RestaurantView'
+export default function RestaurantViewRoute(props) {
     return (
         <StyledApp>
             <StyledSideBar>
 
-                <AddRestaurantBar {...props} />
+                <RestaurantViewBar {...props} />
 
             </StyledSideBar>
             <StyledMainPage>
-                <AddRestaurant {...props} />
+                <RestaurantView {...props} />
             </StyledMainPage>
         </StyledApp>
     )
