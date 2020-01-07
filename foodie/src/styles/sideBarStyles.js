@@ -8,7 +8,7 @@ height: 100vh;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        background-color: orangered;\
+        background-color: orangered;
         div{
             height: 100vh;
         width: 100%;

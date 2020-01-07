@@ -2,22 +2,22 @@ import React from 'react';
 import { Formik, Form, Field } from 'formik'
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import { StyledForm } from '../../styles/formStyles';
-
+import { useParams } from 'react-router-dom'
 export default function AddNewDish() {
-
+    const { id } = useParams()
     return (
         <StyledForm>
             <Formik
                 initialValues={{ name: '', type: '', taste: '', looks: '', price: '', review: '' }} onSubmit={(values) => {
                     console.log(values)
                     // axiosWithAuth()
-                    // .post({ ...values, id: Date.now() })
+                    // .post('http://.......',{ ...values, restauarantid: id })
                     // .then(response => {
                     //     props.history.push('#')
                     // })
                     // .catch(error => console.log(error))
                 }}
-                >
+            >
 
                 <Form>
                     <span>Restaurant Name: </span>
