@@ -12,6 +12,8 @@ export default function MenuItem() {
     let { id } = useParams();
     let history = useHistory();
     const { menu, setMenu } = React.useContext(MenuContext);
+
+    const target = menu.filter(i => i.id == id)
     React.useEffect(() => {
         axiosWithAuth()
             .get('https://foodie-fun-chards.herokuapp.com/api/menu')
@@ -31,11 +33,14 @@ export default function MenuItem() {
     function handleclick() {
         axiosWithAuth()
             .delete(`https://foodie-fun-chards.herokuapp.com/api/menu/${id}`)
-            .then(res => history.push("/restaurantview"))
+            .then(res => history.push(`/restaurant/${target[0].restaurants_id}`))
             .catch(err => console.log(err));
     }
     function handleEdit() {
         history.push(`/edititem/${id}`);
+    }
+    function handleReturn() {
+        history.push(`/restaurant/${target[0].restaurants_id}`)
     }
     return (
         <div>
@@ -60,6 +65,7 @@ export default function MenuItem() {
 
             <button onClick={handleEdit}>Edit Review</button>
             <button onClick={handleclick}>Delete Review</button>
+            <div><button onClick={handleReturn}>Back to Restaurant</button></div>
         </div>
     )
 }
