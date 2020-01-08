@@ -2,23 +2,14 @@ import React from 'react'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
 import { Link } from 'react-router-dom'
 import { useParams, useHistory } from 'react-router-dom'
+import { RestaurantContext } from '../contexts/RestaurantContext'
 export default function TestPUT() {
     let { id } = useParams()
     let history = useHistory()
-    const [state, setState] = React.useState([])
-    React.useEffect(() => {
-        axiosWithAuth()
-            .get('https://foodie-fun-chards.herokuapp.com/api/restaurants')
-            .then(res => {
-                console.log(res.data)
-                setState(res.data)
+    const { restaurants, setRestaurants } = React.useContext(RestaurantContext)
+    console.log('contextlog', restaurants)
 
-            })
-            .catch(err => console.log(err))
-    }, []
 
-    )
-    console.log(state)
     function handleclick() {
         axiosWithAuth()
             .delete(`https://foodie-fun-chards.herokuapp.com/api/restaurants/${id}`)
@@ -27,8 +18,8 @@ export default function TestPUT() {
     }
     return (
         <div>
-            {state.map(i => {
-                if (i.id === 1) {
+            {restaurants.map(i => {
+                if (i.id == id) {
                     return (<div>
                         <h1>{i.name}</h1>
                     </div>)
