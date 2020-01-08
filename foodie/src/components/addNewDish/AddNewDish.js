@@ -39,15 +39,15 @@ export default function AddNewDish() {
                     <span>Cuisine Type: </span>
                     <Field as='select' name='cuisineType'>
                         <option value=''>Please Select One...</option>
-                        <option value='american'>American</option>
-                        <option value='asian'>Asian</option>
-                        <option value='barbeque'>Barbeque</option>
-                        <option value='fastfood'>Fast Food</option>
-                        <option value='indian'>Indian</option>
-                        <option value='italian'>Italian</option>
-                        <option value='mediterranean'>Mediterranean</option>
-                        <option value='mexican'>Mexican</option>
-                        <option value='pizza'>Pizza</option>
+                        <option value='American'>American</option>
+                        <option value='Asian'>Asian</option>
+                        <option value='Barbeque'>Barbeque</option>
+                        <option value='Fastfood'>Fast Food</option>
+                        <option value='Indian'>Indian</option>
+                        <option value='Italian'>Italian</option>
+                        <option value='Mediterranean'>Mediterranean</option>
+                        <option value='Mexican'>Mexican</option>
+                        <option value='Pizza'>Pizza</option>
                     </Field>
 
                     <span>Item Rating: </span>
@@ -63,9 +63,9 @@ export default function AddNewDish() {
                     <span>Price: </span>
                     <Field as='select' name='price' placeholder='Price'>
                         <option value=''>Please Select One...</option>
-                        <option value='cheap'>$ - Cheap</option>
-                        <option value='average'>$$ - Average</option>
-                        <option value='expensive'>$$$ - Expensive</option>
+                        <option value='Cheap'>$ - Cheap</option>
+                        <option value='Average'>$$ - Average</option>
+                        <option value='Expensive'>$$$ - Expensive</option>
                     </Field>
 
                     <span>Image URL: </span>
