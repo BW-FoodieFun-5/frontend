@@ -16,12 +16,16 @@ export default function TestPUT() {
             .then(res => history.push('/restaurantview'))
             .catch(err => console.log(err))
     }
+    function handleEdit(){
+        history.push(`editrestaurant/${id}`)
+    }
     return (
         <div>
             {restaurants.map(i => {
                 if (i.id == id) {
                     return (<div>
                         <h1>{i.name}</h1>
+                        <img src = {`${i.image}`}></img>
                     </div>)
                 }
             }
@@ -30,7 +34,7 @@ export default function TestPUT() {
 
             )
             }
-            <Link to={`/dish/${id}`}>see all reviews</Link>
+            <Link to={`editrestaurant/${id}`}>see all reviews</Link>
             <button onClick={handleclick} >Delete Restaurant</button>
         </div>
     )

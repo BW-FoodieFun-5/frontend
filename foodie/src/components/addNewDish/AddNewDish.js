@@ -17,8 +17,10 @@ export default function AddNewDish() {
     return (
         <StyledForm>
             <Formik
-                initialValues={{ itemName: '', cuisineType: '', price: '', description: '', image: '', itemRating: '', itemReview: '' }} onSubmit={(values) => {
+                initialValues={{ itemName: '', cuisineType: '', price: '', description: '', image: '', itemRating: '', itemReview: '' }}
+                onSubmit={(values) => {
                     console.log(values)
+
                     axiosWithAuth()
                         .post('https://foodie-fun-chards.herokuapp.com/api/menu', { ...values, restaurants_id: 1 })
                         .then(response => {
@@ -26,6 +28,7 @@ export default function AddNewDish() {
                             history.push(`/restaurant/${id}`)
                         })
                         .catch(error => console.log(error))
+
                 }}
             >
 
