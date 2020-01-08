@@ -12,6 +12,18 @@ export default function MenuItem() {
     let { id } = useParams();
     let history = useHistory();
     const { menu, setMenu } = React.useContext(MenuContext);
+    React.useEffect(() => {
+        axiosWithAuth()
+            .get('https://foodie-fun-chards.herokuapp.com/api/menu')
+            .then(res => {
+                console.log('menu', res.data)
+
+                setMenu(res.data)
+
+            })
+            .catch(err => console.log(err))
+    }, [])
+
 
     console.log('menu2', menu);
 
