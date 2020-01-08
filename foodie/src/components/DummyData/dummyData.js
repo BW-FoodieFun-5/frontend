@@ -38,7 +38,7 @@ export const dummydata = [
         ratings: 3,
         review: 'meh, just meh',
         mealReviews: [
-            { name: 'spaghetti', rating: 3, review: 'big meh' },
+            { name: 'spaghetti', rating: 3, review: 'big meh', op: '' },
             { name: 'Gumbo', rating: 5, review: 'delicious' }
         ]
     }, {
