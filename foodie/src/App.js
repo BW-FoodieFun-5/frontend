@@ -30,9 +30,12 @@ function App() {
             <Switch>
               <Route exact path="/login" ><LoginRoute /></Route>
               <Route exact path="/signup" component={SignupRoute} />
+              <PrivateRoute exact path="/adddish/:id" component={AddNewDishRoute} />
               <PrivateRoute exact path="/addrestaurant" component={AddRestaurantRoute} />
               <PrivateRoute exact path="/restaurantview" component={RestaurantViewRoute} />
-              <Route exact path="/adddish/:id" component={AddNewDishRoute} />
+
+              
+
               <PrivateRoute exact path='/editrestaurant/:id' component={EditRestaurant} />
               <PrivateRoute exact path='/menureview/:id' component={MenuItem} />
               <PrivateRoute exact path='/restaurant/:id' component={TestPUT} />

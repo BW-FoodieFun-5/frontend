@@ -27,7 +27,7 @@ export default function EditDish() {
                         .put(`https://foodie-fun-chards.herokuapp.com/api/menu/${id}`, { ...values })
                         .then(response => {
                             console.log(response);
-                            history.push(`/restaurantview`)
+                            history.push(`/menureview/${id}`)
                         })
                         .catch(error => console.log(error))
 

@@ -21,14 +21,14 @@ export const StyledGrid = styled.div`
         display: flex;
         width: 100%;
         justify-content: space-evenly;
-
+        flex-direction: column;
         flex-wrap: wrap;
-        background-color: #593333;
+        background-color: #181212;
 
         a{
             background-color: #593333;
             color: orangered;
-            width: 25%; 
+            // width: 25%; 
             
         } 
     

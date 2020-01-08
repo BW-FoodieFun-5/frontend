@@ -14,6 +14,18 @@ export default function TestPUT() {
   let history = useHistory();
   const { menu, setMenu } = React.useContext(MenuContext);
   const { restaurants, setRestaurants } = React.useContext(RestaurantContext);
+  React.useEffect(() => {
+    axiosWithAuth()
+      .get('https://foodie-fun-chards.herokuapp.com/api/restaurants')
+      .then(res => {
+        console.log(res.data)
+        setRestaurants(res.data)
+
+      })
+      .catch(err => console.log(err))
+  }, []
+
+  )
 
   React.useEffect(() => {
     axiosWithAuth()

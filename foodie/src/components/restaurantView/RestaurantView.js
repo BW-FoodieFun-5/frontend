@@ -52,6 +52,9 @@ function RestCard(props) {
     return (
 
         <Link to={`/restaurant/${props.data.id}`}>
+            <div>
+                <img src={`${props.data.image}`} style={{ width: '200px'}}/>
+            </div>
             <h1>{props.data.name}</h1>
             <h2>{props.data.description}</h2>
             {/* <h3>{props.data.rating} Stars</h3> */}
