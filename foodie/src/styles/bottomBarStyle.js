@@ -4,6 +4,8 @@ export const StyledBottomBar = styled.div`
     position: fixed;
     left: 0;
     bottom: 0;
-    height: 10vh;
+    height: 8vh;
+    width: 100%;
     background-color: white;
+    // z-index: 1;
 `;
