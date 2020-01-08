@@ -2,30 +2,32 @@ import React from 'react';
 import { Formik, Form, Field } from 'formik'
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import { StyledForm } from '../../styles/formStyles';
-
+import { MenuContext } from '../../contexts/MenuContext'
 
 import { ReviewBox } from '../../styles/reviewBox';
 import { useParams, useHistory } from 'react-router-dom';
 
 
 
-export default function AddNewDish() {
+export default function EditDish() {
 
     let { id } = useParams();
     let history = useHistory();
-
+    const { menu, setMenu } = React.useContext(MenuContext);
+    const target = menu.filter(i => i.id == id)
+    console.log('target', target)
     return (
         <StyledForm>
             <Formik
-                initialValues={{ itemName: '', cuisineType: '', price: '', description: '', image: '', itemRating: '', itemReview: '' }}
+                initialValues={{ ...target[0] }}
                 onSubmit={(values) => {
                     console.log(values)
 
                     axiosWithAuth()
-                        .post('https://foodie-fun-chards.herokuapp.com/api/menu', { ...values, restaurants_id: id })
+                        .put(`https://foodie-fun-chards.herokuapp.com/api/menu/${id}`, { ...values })
                         .then(response => {
                             console.log(response);
-                            history.push(`/restaurant/${id}`)
+                            history.push(`/restaurantview`)
                         })
                         .catch(error => console.log(error))
 
@@ -77,7 +79,7 @@ export default function AddNewDish() {
                         <Field className='reviewBox' type='textarea' name='itemReview'></Field>
                     </ReviewBox>
                     <button type='submit'>
-                        Add Dish
+                        Commit Edit
                     </button>
                 </Form>
             </Formik>
