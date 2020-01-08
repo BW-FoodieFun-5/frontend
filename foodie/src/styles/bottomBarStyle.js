@@ -6,6 +6,6 @@ export const StyledBottomBar = styled.div`
     bottom: 0;
     height: 8vh;
     width: 100%;
-    background-color: orangered;
+    background-color: #181212;
     // z-index: 1;
 `;

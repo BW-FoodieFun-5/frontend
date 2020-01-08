@@ -1,5 +1,5 @@
   html{
-    background-color:  #593333;
+    background-color:  #181212;
   }
   
   
@@ -55,4 +55,8 @@ a{
 
 .reviewBox {
   height: 100px;
+}
+
+span {
+  color: #C45228;
 }

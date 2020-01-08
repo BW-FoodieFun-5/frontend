@@ -8,7 +8,7 @@ import styled from 'styled-components'
 // `
 
 export const StyledApp = styled.div`
-        background: #593333
+        background: #181212
         // display: flex;
         // width: 100%;
         // justify-content: center;
