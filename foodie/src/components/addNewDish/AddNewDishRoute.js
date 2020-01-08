@@ -11,7 +11,7 @@ export default function AddNewDishRoute() {
     return (
         <StyledApp>
             <StyledMainPage>
-            <h1>Add New Dish</h1>
+            <h1 style={{color: '#C45228'}}>Add New Dish</h1>
             <AddNewDish />
             </StyledMainPage>
             <StyledBottomBar>
