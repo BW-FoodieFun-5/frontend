@@ -36,7 +36,7 @@ export default function MenuItem() {
                             <h1>Name: {i.itemName}</h1>
                             <h2>Cuisine Type: {i.cuisineType}</h2>
                             <h3>Price: {i.price}</h3>
-                            <h4>Rating: {i.itemRating}</h4>
+                            <h3>Rating: {i.itemRating}</h3>
 
                             <p>Review: {i.itemReview}</p>
 
