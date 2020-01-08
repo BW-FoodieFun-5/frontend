@@ -3,6 +3,7 @@ import './App.css';
 import SignupRoute from './components/signUp/SignupRoute'
 import LoginRoute from './components/login/LoginRoute'
 import AddRestaurantRoute from './components/addRestaurant/AddRestaurantRoute'
+import Nav from './components/Nav'
 import AddNewDishRoute from './components/addNewDish/AddNewDishRoute'
 import RestaurantViewRoute from './components/restaurantView/RestaurantViewRoute'
 import { Switch, Route } from 'react-router-dom'
@@ -17,7 +18,7 @@ function App() {
     <RestaurantContext.Provider value={{ restaurants, setRestaurants }}>
       <div className="App">
         <header className="App-header">
-
+        <Nav/>
 
           <Switch>
             <Route exact path="/login" ><LoginRoute /></Route>

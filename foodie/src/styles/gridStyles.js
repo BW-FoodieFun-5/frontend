@@ -21,7 +21,7 @@ export const StyledGrid = styled.div`
         display: flex;
         width: 100%;
         justify-content: space-evenly;
-        flex-wrap: wrap
+        // flex-wrap: wrap
         // background: white;
         a{
             color: orangered;
