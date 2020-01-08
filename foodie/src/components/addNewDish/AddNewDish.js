@@ -2,6 +2,8 @@ import React from 'react';
 import { Formik, Form, Field } from 'formik'
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import { StyledForm } from '../../styles/formStyles';
+
+
 import { ReviewBox } from '../../styles/reviewBox';
 import { useParams, useHistory } from 'react-router-dom';
 
@@ -12,11 +14,13 @@ export default function AddNewDish() {
     let {id} = useParams();
     let history = useHistory();
 
+
     return (
         <StyledForm>
             <Formik
                 initialValues={{ itemName: '', cuisineType: '', price: '', description: '', image: '', itemRating: '', itemReview: '' }} onSubmit={(values) => {
                     console.log(values)
+
                     axiosWithAuth()
                     .post('https://foodie-fun-chards.herokuapp.com/api/menu', { ...values, restaurants_id: 1 })
                     .then(response => {
@@ -24,8 +28,9 @@ export default function AddNewDish() {
                         history.push(`/restaurant/${id}`)
                     })
                     .catch(error => console.log(error))
+
                 }}
-                >
+            >
 
                 <Form>
                     <span>Item Name: </span>
