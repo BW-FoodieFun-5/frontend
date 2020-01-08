@@ -5,12 +5,10 @@
 
 import styled from "styled-components";
 
-
-
 export const Header = styled.header`
   display:flex
   background: #C45228
-  height: 20vh
+  height: 65px;
   justify-content: space-around
   align-items:center
   h1{
@@ -19,7 +17,7 @@ export const Header = styled.header`
   }
 
   @media (max-width: 500px){
-      height:10vh
+      // height:10vh
    h1{
        font-size:2rem
    }
@@ -28,6 +26,11 @@ export const Header = styled.header`
 export const DropDown = styled.ul`
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 15px;
+  // border-left: solid black 2px;
+  // border-bottom: solid black 2px;
+
   a{
     text-decoration:none;
     color:black;

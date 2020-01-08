@@ -19,6 +19,18 @@ export default function RestaurantView(props) {
     }, []
 
     )
+    React.useEffect(() => {
+        axiosWithAuth()
+            .get('https://foodie-fun-chards.herokuapp.com/api/menu')
+            .then(res => {
+                console.log(res.data)
+
+
+            })
+            .catch(err => console.log(err))
+    }, []
+
+    )
     // let handleClick = function () {
     //     axiosWithAuth()
     //         .delete('https://foodie-fun-chards.herokuapp.com/api/restaurants/2')

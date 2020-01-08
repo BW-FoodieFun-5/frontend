@@ -10,12 +10,13 @@ import AddNewDishBar from './AddNewDishBar'
 export default function AddNewDishRoute() {
     return (
         <StyledApp>
-            <AddNewDishBar />
             <StyledMainPage>
-            </StyledMainPage>
             <h1>Add New Dish</h1>
             <AddNewDish />
-               
+            </StyledMainPage>
+            <StyledBottomBar>
+                {/* <AddNewDishBar />     */}
+            </StyledBottomBar>
         </StyledApp>
     )
 }
