@@ -3,7 +3,7 @@ import './App.css';
 import SignupRoute from './components/signUp/SignupRoute'
 import LoginRoute from './components/login/LoginRoute'
 import AddRestaurantRoute from './components/addRestaurant/AddRestaurantRoute'
-
+import Nav from './components/Nav'
 import AddNewDishRoute from './components/addNewDish/AddNewDishRoute'
 
 import RestaurantViewRoute from './components/restaurantView/RestaurantViewRoute'
