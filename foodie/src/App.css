@@ -36,18 +36,21 @@ background: #E8964A;
  */
 #menu{
   position: absolute;
-  top:100px;
-  right:270px;
+  top: 64px;
+  right: 0px;
   background-color:  #C45228;
-  
+  margin: 0;
+  padding: 0;
 }
 
  .hidden{
-   display:none;
+   display: none;
  }
 
 a{
   text-decoration: none;
+  margin: 0;
+  padding: 0;
 }
 
 .reviewBox {

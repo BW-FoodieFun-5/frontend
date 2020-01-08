@@ -9,10 +9,11 @@ import styled from 'styled-components'
 // `
 
 export const StyledMainPage = styled.div`
-    margin-left: 15%; 
-    width: 84%;   
+    // margin-left: 15%; 
+    // width: 84%;   
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center
-    background: white;
+    // background: white;
 `

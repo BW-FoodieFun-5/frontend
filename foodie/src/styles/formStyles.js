@@ -21,6 +21,8 @@ export const StyledForm = styled.div`
         
         display: flex;
         flex-direction: column;
+        width: 300px;
+        
         // background: white;
 
         button{

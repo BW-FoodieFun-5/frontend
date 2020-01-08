@@ -28,6 +28,11 @@ export const Header = styled.header`
 export const DropDown = styled.ul`
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 15px;
+  border-left: solid black 2px;
+  border-bottom: solid black 2px;
+
   a{
     text-decoration:none;
     color:black;
