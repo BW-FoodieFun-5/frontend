@@ -1,8 +1,11 @@
- .App {
-   margin: 0 auto;
+  html{
+    background-color:  #593333;
+  }
   
-  width:80%;
-} 
+  
+  /* .App {
+   
+}   */
 
 /* Vector{
 position: absolute;

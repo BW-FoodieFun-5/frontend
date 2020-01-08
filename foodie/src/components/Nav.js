@@ -7,28 +7,13 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import {Link } from "react-router-dom";
 
+import {Header,DropDown} from '../styles/NavStyles'
 
-
-const Header = styled.header`
-  display:flex
-  background: #C45228
-  height: 20vh
-  justify-content: space-around
-  align-items:center
-
-`;
-const DropDown = styled.ul`
-  display: flex;
-  flex-direction: column;
-  a{
-    text-decoration:none;
-    color:black;
-  }
-`;
 
 
 function Nav() {
   function toggle() {
+
     document.getElementById("menu").classList.toggle("hidden");
   }
   return (
@@ -62,6 +47,7 @@ function Nav() {
       </div>
 
       <div id="menu">
+        
         <DropDown>
           <Link>Home</Link>
           <Link>Favorite Dish</Link>
@@ -69,9 +55,10 @@ function Nav() {
           <Link>Favorites</Link>
           <Link>Login</Link>
         </DropDown>
+ 
       </div>
 
-      <h1 style={{ fontSize: "5rem", color: "#ECB847" }}>FoodieFun</h1>
+      <h1>FoodieFun</h1>
       <svg
         onClick={() => toggle()}
         width="50"

@@ -18,7 +18,7 @@ function App() {
     <RestaurantContext.Provider value={{ restaurants, setRestaurants }}>
       <div className="App">
         <header className="App-header">
-
+        <Nav/>
 
           <Switch>
             <Route exact path="/login" ><LoginRoute /></Route>

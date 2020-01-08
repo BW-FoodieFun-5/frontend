@@ -7,15 +7,25 @@ import styled from "styled-components";
 
 
 
-const Header = styled.header`
+export const Header = styled.header`
   display:flex
   background: #C45228
   height: 20vh
   justify-content: space-around
   align-items:center
+  h1{
+    font-size: 5rem
+     color: #ECB847 
+  }
 
+  @media (max-width: 500px){
+      height:10vh
+   h1{
+       font-size:2rem
+   }
+  }
 `;
-const DropDown = styled.ul`
+export const DropDown = styled.ul`
   display: flex;
   flex-direction: column;
   a{
@@ -24,4 +34,11 @@ const DropDown = styled.ul`
   }
 `
 
-export default [Header,DropDown];
+// export const DropDownList = styled.div`
+// position: absolute;
+//   top:100px;
+//   right:270px;
+//   background-color:  #C45228;
+
+
+// `
