@@ -5,4 +5,5 @@ export const Spacing = styled.div`
     // flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    
 `;

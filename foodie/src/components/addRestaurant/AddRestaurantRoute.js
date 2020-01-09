@@ -10,15 +10,14 @@ import AddRestaurantBar from './AddRestaurantBar'
 export default function AddRestaurantRoute(props) {
     return (
         <StyledApp>
-            <StyledBottomBar>
-
-                <AddRestaurantBar {...props} />
-
-            </StyledBottomBar>
+            <h1 style={{color: '#C45228', textAlign: 'center' }}>Add Restaurant</h1>
             <StyledMainPage>
                 <StyledLogin>
-                <AddRestaurant {...props} />
+                    <AddRestaurant {...props} />
                 </StyledLogin>
+                <StyledBottomBar>
+                    <AddRestaurantBar {...props} />
+            </StyledBottomBar>
             </StyledMainPage>
         </StyledApp>
     )

@@ -18,18 +18,28 @@ import styled from 'styled-components'
 
 export const StyledGrid = styled.div`
     
-        display: flex;
-        width: 100%;
-        justify-content: space-evenly;
-        flex-direction: column;
-        flex-wrap: wrap;
-        background-color: #181212;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #181212;
 
-        a{
-            background-color: #593333;
-            color: orangered;
-            // width: 25%; 
-            
-        } 
-    
+    h1 {
+        margin-left: 20px;
+    }
+
+    h2 {
+        margin-left: 20px;
+    }
+
+    a{
+        background-color: #593333;
+        color: orangered;
+        margin-bottom: 20px;
+        padding: 0;
+        // width: 25%; 
+        
+    } 
+
 `

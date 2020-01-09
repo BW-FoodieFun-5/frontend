@@ -41,6 +41,7 @@ background: #E8964A;
   background-color:  #C45228;
   margin: 0;
   padding: 0;
+  display: none;
 }
 
  .hidden{
@@ -51,6 +52,7 @@ a{
   text-decoration: none;
   margin: 0;
   padding: 0;
+  color: white;
 }
 
 .reviewBox {

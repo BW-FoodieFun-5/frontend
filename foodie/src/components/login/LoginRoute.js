@@ -10,15 +10,14 @@ import Login from './Login'
 export default function LoginRoute() {
     return (
         <StyledApp>
-            <StyledBottomBar>
-
-                <LoginBar />
-
-            </StyledBottomBar>
+            <h1 style={{color: '#C45228', textAlign: 'center' }}>Login</h1>
             <StyledMainPage>
             <StyledLogin>
                 <Login />
             </StyledLogin>
+            <StyledBottomBar>
+                <LoginBar />
+            </StyledBottomBar>
             </StyledMainPage>
         </StyledApp>
     )

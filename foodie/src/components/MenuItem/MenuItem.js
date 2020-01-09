@@ -7,6 +7,9 @@ import {
     FavoriteRestaurantStyles,
     RestaurantCardButtons
 } from "../../styles/FavoriteRestaurantStyles";
+import { LineHeight } from '../../styles/lineHeight';
+import { Spacing } from '../../styles/spacing';
+import { StyledBottomBar } from '../../styles/bottomBarStyle'
 
 export default function MenuItem() {
     let { id } = useParams();
@@ -48,24 +51,31 @@ export default function MenuItem() {
             {menu.map(i => {
                 if (i.id == id) {
                     return (
-                        <div>
+                        <LineHeight>
+                            <Spacing style={{ flexDirection: 'column' }}>
                             {" "}
-                            <h1>Name: {i.itemName}</h1>
-                            <h2>Cuisine Type: {i.cuisineType}</h2>
-                            <h3>Price: {i.price}</h3>
+                            <h1>{i.itemName}</h1>
+                            <div style={{ display: 'flex' }}>
+                            <h3 >Cuisine Type: {i.cuisineType}</h3>
                             <h3>Rating: {i.itemRating}</h3>
+                            </div>
+                            <h3>Price: {i.price}</h3>
+                            
 
                             <p>Review: {i.itemReview}</p>
 
-
-                        </div>
+                            </Spacing>
+                        </LineHeight>
                     );
                 }
             })}
-
+            <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '10px' }}>
             <button onClick={handleEdit}>Edit Review</button>
             <button onClick={handleclick}>Delete Review</button>
-            <div><button onClick={handleReturn}>Back to Restaurant</button></div>
+            </div>
+            <StyledBottomBar style={{ display: 'flex', justifyContent: 'center' }}>
+                <button onClick={handleReturn}>Back to Restaurant</button>
+            </StyledBottomBar>
         </div>
     )
 }

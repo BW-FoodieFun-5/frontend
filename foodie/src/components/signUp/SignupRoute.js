@@ -9,15 +9,14 @@ import Signup from './SignUp'
 export default function SignupRoute() {
     return (
         <StyledApp>
-            <StyledBottomBar>
-
-                <SignupBar />
-
-            </StyledBottomBar>
+            <h1 style={{color: '#C45228', textAlign: 'center' }}>Sign Up</h1>
             <StyledMainPage>
                 <StyledLogin>
-                <Signup />
+                    <Signup />
                 </StyledLogin>
+                <StyledBottomBar>
+                    <SignupBar />
+                </StyledBottomBar>
             </StyledMainPage>
         </StyledApp>
     )

@@ -1,15 +1,19 @@
 import styled from 'styled-components'
 
 export const FavoriteRestaurantStyles = styled.div `
- text-align:center
+
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align:center
 
 
 *{
     color: #C45228
 }
 button{
-    width:47%
-    color:#ECB847
+    width: 47%;
+    color: black;
 }
 
 

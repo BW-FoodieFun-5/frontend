@@ -22,11 +22,15 @@ export default function Login() {
                 }}
             >
                 <Form>
-                    <span>Username: </span><Field type='username' name='username'></Field>
-                    <span>Password: </span><Field type='password' name='password'></Field>
+                    <span>Username: </span>
+                    <Field type='username' name='username'></Field>
+
+                    <span>Password: </span>
+                    <Field type='password' name='password'></Field>
+                    
                     <button type='submit'>
                         Log In
-        </button>
+                    </button>
                 </Form>
             </Formik>
         </StyledForm>

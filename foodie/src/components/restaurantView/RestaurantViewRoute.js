@@ -10,15 +10,14 @@ import RestaurantView from './RestaurantView'
 export default function RestaurantViewRoute(props) {
     return (
         <StyledApp>
-            <StyledBottomBar>
-
-                <RestaurantViewBar {...props} />
-
-            </StyledBottomBar>
+            <h1 style={{color: '#C45228', textAlign: 'center' }}>Restaurants</h1>
             <StyledMainPage>
                 <StyledLogin>
-                <RestaurantView {...props} />
+                    <RestaurantView {...props} />
                 </StyledLogin>
+                <StyledBottomBar>
+                    <RestaurantViewBar {...props} />
+            </StyledBottomBar>
             </StyledMainPage>
         </StyledApp>
     )

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useParams, useHistory } from "react-router-dom";
 import { RestaurantContext } from "../contexts/RestaurantContext";
 import { MenuContext } from "../contexts/MenuContext";
+import { LineHeight } from '../styles/lineHeight';
 import {
   FavoriteRestaurantStyles,
   RestaurantCardButtons
@@ -61,21 +62,28 @@ export default function TestPUT() {
       {restaurants.map(i => {
         if (i.id == id) {
           return (
-            <div>
+            <div style={{ marginTop: '10px' }}>
+              <LineHeight>
               {" "}
-              <h1>Name: {i.name}</h1>
-              <h2>Cuisine Type: {i.cuisineType}</h2>
+              <h1 style={{ textAlign: 'center', marginBottom: '10px' }}>{i.name}</h1>
+              <div style={{ display: 'flex' }}>
+                <h3>Cuisine Type: { i.cuisineType }</h3>
+                <h3>Rating: { i.rating }</h3>
+              </div>
               <h3>Hours of Operation: {i.hoursOperation}</h3>
-              <h4>Rating: {i.rating}</h4>
-              <p>Description: {i.description}</p>
-              <p>Review: {i.review}</p>
-              <p>Menu Items:</p>
+              <h4>Description: {i.description}</h4>
+              <h4>Review: {i.review}</h4>
+              </LineHeight>
+              <LineHeight>
+              <h2 style={{ textAlign: 'center' }}>Menu Items:</h2>
               {menu.map(i => {
                 if (i.restaurants_id == id) {
-                  return <div key={i.id}><p>{i.itemName} - {i.itemRating} stars</p>
-                    <button onClick={() => history.push(`/menureview/${i.id}`)}>View Item</button> </div>
+                  return <div style={{ textAlign: 'center', marginBottom: '20px' }} key={i.id}>
+                          <h4>{i.itemName} - {i.itemRating} Stars</h4>
+                          <button onClick={() => history.push(`/menureview/${i.id}`)}>View Item</button> </div>
                 }
               })}
+              </LineHeight>
             </div>
           );
         }

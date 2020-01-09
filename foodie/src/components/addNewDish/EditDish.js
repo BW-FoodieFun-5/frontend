@@ -3,7 +3,7 @@ import { Formik, Form, Field } from 'formik'
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import { StyledForm } from '../../styles/formStyles';
 import { MenuContext } from '../../contexts/MenuContext'
-
+import { Spacing } from '../../styles/spacing'
 import { ReviewBox } from '../../styles/reviewBox';
 import { useParams, useHistory } from 'react-router-dom';
 
@@ -18,6 +18,7 @@ export default function EditDish() {
     console.log('target', target)
     return (
         <StyledForm>
+            <Spacing>
             <Formik
                 initialValues={{ ...target[0] }}
                 onSubmit={(values) => {
@@ -35,21 +36,22 @@ export default function EditDish() {
             >
 
                 <Form>
+                    <h1 style={{color: '#C45228'}}>Edit Item</h1>
                     <span>Item Name: </span>
                     <Field type='text' name='itemName'></Field>
 
                     <span>Cuisine Type: </span>
                     <Field as='select' name='cuisineType'>
                         <option value=''>Please Select One...</option>
-                        <option value='american'>American</option>
-                        <option value='asian'>Asian</option>
-                        <option value='barbeque'>Barbeque</option>
-                        <option value='fastfood'>Fast Food</option>
-                        <option value='indian'>Indian</option>
-                        <option value='italian'>Italian</option>
-                        <option value='mediterranean'>Mediterranean</option>
-                        <option value='mexican'>Mexican</option>
-                        <option value='pizza'>Pizza</option>
+                        <option value='American'>American</option>
+                        <option value='Asian'>Asian</option>
+                        <option value='Barbeque'>Barbeque</option>
+                        <option value='Fast Food'>Fast Food</option>
+                        <option value='Indian'>Indian</option>
+                        <option value='Italian'>Italian</option>
+                        <option value='Mediterranean'>Mediterranean</option>
+                        <option value='Mexican'>Mexican</option>
+                        <option value='Pizza'>Pizza</option>
                     </Field>
 
                     <span>Item Rating: </span>
@@ -65,24 +67,28 @@ export default function EditDish() {
                     <span>Price: </span>
                     <Field as='select' name='price' placeholder='Price'>
                         <option value=''>Please Select One...</option>
-                        <option value='cheap'>$ - Cheap</option>
-                        <option value='average'>$$ - Average</option>
-                        <option value='expensive'>$$$ - Expensive</option>
+                        <option value='Cheap'>$ - Cheap</option>
+                        <option value='Average'>$$ - Average</option>
+                        <option value='Expensive'>$$$ - Expensive</option>
                     </Field>
 
                     <span>Image URL: </span>
                     <Field type='text' name='image'></Field>
+
                     <span>Description: </span>
                     <Field type='text' name='description'></Field>
+
                     <ReviewBox>
                         <span>Review: </span>
                         <Field className='reviewBox' type='textarea' name='itemReview'></Field>
                     </ReviewBox>
+
                     <button type='submit'>
-                        Commit Edit
+                        Submit Edit
                     </button>
                 </Form>
             </Formik>
+            </Spacing>
         </StyledForm>
     )
 }

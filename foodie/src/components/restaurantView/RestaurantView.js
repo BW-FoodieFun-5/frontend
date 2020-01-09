@@ -4,6 +4,7 @@ import { axiosWithAuth } from '../../utils/axiosWithAuth'
 import { Link } from 'react-router-dom'
 import { StyledGrid } from '../../styles/gridStyles'
 import { RestaurantContext } from '../../contexts/RestaurantContext'
+import { Spacing } from '../../styles/spacing';
 export default function RestaurantView(props) {
     console.log('context2', RestaurantContext)
     const { restaurants, setRestaurants } = useContext(RestaurantContext)
@@ -52,9 +53,9 @@ function RestCard(props) {
     return (
 
         <Link to={`/restaurant/${props.data.id}`}>
-            <div>
-                <img src={`${props.data.image}`} style={{ width: '200px'}}/>
-            </div>
+            <Spacing>
+                <img src={`${props.data.image}`} style={{ width: '50%'}}/>
+            </Spacing>
             <h1>{props.data.name}</h1>
             <h2>{props.data.description}</h2>
             {/* <h3>{props.data.rating} Stars</h3> */}
