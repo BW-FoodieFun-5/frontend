@@ -7,7 +7,7 @@ export const FavoriteRestaurantStyles = styled.div`
     text-align:center
 
     * {
-       color: #C45228
+    //    color: #C45228
     }
 
     button {

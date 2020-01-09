@@ -75,7 +75,7 @@ export default function RestaurantFilters(props) {
 
                     <button type='submit'>
                         Filter
-                </button>
+                    </button>
 
                 </Form>
 

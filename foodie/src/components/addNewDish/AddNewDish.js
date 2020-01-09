@@ -3,6 +3,8 @@ import { Formik, Form, Field } from 'formik';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import { useParams, useHistory } from 'react-router-dom';
 
+import { MenuContext } from '../../contexts/MenuContext';
+
 import { StyledForm } from '../../styles/formStyles';
 import { ReviewBox } from '../../styles/reviewBox';
 
@@ -10,6 +12,23 @@ export default function AddNewDish() {
 
     let { id } = useParams();
     let history = useHistory();
+
+    const { menu, setMenu } = React.useContext(MenuContext);
+    const target = menu.filter(i => i.id == id)
+
+    React.useEffect(() => {
+        axiosWithAuth()
+            .get('https://foodie-fun-chards.herokuapp.com/api/menu')
+            .then(res => {
+                console.log('menu', res.data)
+                setMenu(res.data)
+            })
+            .catch(err => console.log(err))
+    }, [])
+
+    function handleReturn() {
+        history.push(`/restaurant/${target[0].restaurants_id}`)
+    }
 
     return (
         <StyledForm>
@@ -76,6 +95,9 @@ export default function AddNewDish() {
 
                 <button type='submit'>
                     Add Dish
+                </button>
+                <button onClick={handleReturn}>
+                    Cancel
                 </button>
 
             </Form>

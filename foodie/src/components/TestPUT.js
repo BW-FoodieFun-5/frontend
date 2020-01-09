@@ -71,6 +71,10 @@ export default function TestPUT() {
                   <h3>Rating: {i.rating}</h3>
                 </div>
 
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                  <img src={i.image} style={{ maxWidth: '225px', marginBottom: '10px'}} />
+                </div>
+
                 <h3>Hours of Operation: {i.hoursOperation}</h3>
                 <h4>Description: {i.description}</h4>
                 <h4>Review: {i.review}</h4>
@@ -81,8 +85,12 @@ export default function TestPUT() {
 
                 
                 <MenuFilters state={{ menu, setMenu }} />
-                <h2 style={{ textAlign: 'center' }}>Menu Items:</h2>
 
+                <button onClick={handleAdd}>Add Item</button><br />
+                <button onClick={handleEdit}>Edit Restaurant</button><br />
+                <button onClick={handleclick}>Delete Restaurant</button>{" "}
+
+                <h2 style={{ textAlign: 'center' }}>Menu Items:</h2>
 
                 {menu.map(i => {
                   if (i.restaurants_id == id) {
@@ -100,9 +108,7 @@ export default function TestPUT() {
         }
       })}
 
-      <button onClick={handleAdd}>Add Item Review</button><br />
-      <button onClick={handleEdit}>Edit Restaurant</button><br />
-      <button onClick={handleclick}>Delete Restaurant</button>{" "}
+
 
     </FavoriteRestaurantStyles>
   );
