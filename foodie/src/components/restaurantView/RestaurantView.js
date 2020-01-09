@@ -1,11 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
+import { axiosWithAuth } from '../../utils/axiosWithAuth';
+import { Link } from 'react-router-dom';
 
-import { axiosWithAuth } from '../../utils/axiosWithAuth'
-import { Link } from 'react-router-dom'
-import { StyledGrid } from '../../styles/gridStyles'
-import { RestaurantContext } from '../../contexts/RestaurantContext'
+import { RestaurantContext } from '../../contexts/RestaurantContext';
+
+import { Spacing } from '../../styles/spacing';
+import { StyledGrid } from '../../styles/gridStyles';
+
 export default function RestaurantView(props) {
     console.log('context2', RestaurantContext)
+    
     const { restaurants, setRestaurants } = useContext(RestaurantContext)
     React.useEffect(() => {
         axiosWithAuth()
@@ -13,24 +17,19 @@ export default function RestaurantView(props) {
             .then(res => {
                 console.log(res.data)
                 setRestaurants(res.data)
-
             })
             .catch(err => console.log(err))
-    }, []
+    }, []);
 
-    )
     React.useEffect(() => {
         axiosWithAuth()
             .get('https://foodie-fun-chards.herokuapp.com/api/menu')
             .then(res => {
                 console.log(res.data)
-
-
             })
             .catch(err => console.log(err))
-    }, []
+    }, []);
 
-    )
     // let handleClick = function () {
     //     axiosWithAuth()
     //         .delete('https://foodie-fun-chards.herokuapp.com/api/restaurants/2')
@@ -40,6 +39,7 @@ export default function RestaurantView(props) {
     //         })
     //         .catch(err => console.log(err))
     // }
+
     return (
         <StyledGrid >
             {restaurants.map((data) => (<RestCard key={data.id} data={data} {...props} />))}
@@ -51,14 +51,17 @@ export default function RestaurantView(props) {
 function RestCard(props) {
     return (
 
-        <Link to={`/restaurant/${props.data.id}`}>
-            <div>
-                <img src={`${props.data.image}`} style={{ width: '200px'}}/>
-            </div>
-            <h1>{props.data.name}</h1>
-            <h2>{props.data.description}</h2>
-            {/* <h3>{props.data.rating} Stars</h3> */}
+        <Spacing>
+            <Link to={`/restaurant/${props.data.id}`}>
+                <Spacing>
+                    <img src={`${props.data.image}`} style={{ width: '50%'}}/>
+                </Spacing>
+                
+                <h1>{props.data.name}</h1>
+                <h2>{props.data.description}</h2>
+                {/* <h3>{props.data.rating} Stars</h3> */}
 
-        </Link>
+            </Link>
+        </Spacing>
     )
 }

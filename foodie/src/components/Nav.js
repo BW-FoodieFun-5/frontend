@@ -1,22 +1,17 @@
-//1 orange nav bar, light orange letters
-//2 three line icon opens pop-up menu
-//3 link for 1: Home 2: favorite restaurant  3: add dish 4: favorites 5: login
-// assigned to Jeffrey
-
-import React, { useState } from "react";
-import styled from "styled-components";
+import React from "react";
+// import styled from "styled-components";
 import {Link } from "react-router-dom";
 
 import {Header,DropDown} from '../styles/NavStyles'
 
-
-
 function Nav() {
+
   function toggle() {
 
     document.getElementById("menu").classList.toggle("hidden");
   }
   return (
+    
     <Header>
       <div>
         <svg
@@ -59,6 +54,7 @@ function Nav() {
       </div>
 
       <h1>FoodieFun</h1>
+
       <svg
         onClick={() => toggle()}
         width="50"
@@ -78,5 +74,3 @@ function Nav() {
 }
 
 export default Nav;
-
-

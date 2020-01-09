@@ -1,24 +1,28 @@
-import React from 'react'
-import { StyledMainPage } from '../../styles/mainPageStyles'
-import { StyledApp } from '../../styles/appStyles'
-// import { StyledSideBar } from '../../styles/sideBarStyles'
-import { StyledBottomBar } from '../../styles/bottomBarStyle'
+import React from 'react';
 
-import { StyledLogin } from '../../styles/loginStyles'
-import RestaurantViewBar from './RestaurantViewBar'
-import RestaurantView from './RestaurantView'
+import RestaurantView from './RestaurantView';
+import RestaurantViewBar from './RestaurantViewBar';
+
+import { StyledApp } from '../../styles/appStyles';
+import { StyledBottomBar } from '../../styles/bottomBarStyle';
+import { StyledLogin } from '../../styles/loginStyles';
+import { StyledMainPage } from '../../styles/mainPageStyles';
+// import { StyledSideBar } from '../../styles/sideBarStyles';
+
 export default function RestaurantViewRoute(props) {
     return (
+
         <StyledApp>
-            <StyledBottomBar>
+            <h1 style={{color: '#C45228', textAlign: 'center' }}>Restaurants</h1>
 
-                <RestaurantViewBar {...props} />
-
-            </StyledBottomBar>
             <StyledMainPage>
                 <StyledLogin>
-                <RestaurantView {...props} />
+                    <RestaurantView {...props} />
                 </StyledLogin>
+
+                <StyledBottomBar>
+                    <RestaurantViewBar {...props} />
+                </StyledBottomBar>
             </StyledMainPage>
         </StyledApp>
     )
