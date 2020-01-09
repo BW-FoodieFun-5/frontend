@@ -20,6 +20,7 @@ export const StyledForm = styled.div`
         display: flex;
         flex-direction: column;
         width: 300px;
+        margin-bottom: 20px;
         // background: white;
 
         button {

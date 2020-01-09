@@ -11,9 +11,10 @@ export const Header = styled.header`
     position: absolute;
     top: 99px;
     right: 0px;
-    background-color:  #C45228;
+    background-color: white;
     margin: 0;
     padding: 0;
+    border: solid #C45228 2px;
     /* display: none; */
   
     @media (max-width: 800px) {
@@ -65,7 +66,7 @@ export const DropDown = styled.ul`
 
   a {
     text-decoration: none;
-    color: black;
+    color: #C45228;
   }
 `;
 

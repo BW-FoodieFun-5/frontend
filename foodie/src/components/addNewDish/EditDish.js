@@ -37,7 +37,7 @@ export default function EditDish() {
                 >
 
                 <Form>
-                    <h1 style={{color: '#C45228'}}>Edit Item</h1>
+                    <h1 style={{color: '#C45228', textAlign: 'center'}}>Edit Item</h1>
 
                     <span>Item Name: </span>
                     <Field type='text' name='itemName'></Field>
