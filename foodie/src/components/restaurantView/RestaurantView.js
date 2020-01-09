@@ -51,17 +51,18 @@ export default function RestaurantView(props) {
 function RestCard(props) {
     return (
 
-        <Spacing>
+        <div>
             <Link to={`/restaurant/${props.data.id}`}>
                 <Spacing>
-                    <img src={`${props.data.image}`} style={{ width: '50%'}}/>
+                    <img src={`${props.data.image}`} style={{ maxWidth: '225px'}}/>
                 </Spacing>
-                
-                <h1>{props.data.name}</h1>
-                <h2>{props.data.description}</h2>
-                {/* <h3>{props.data.rating} Stars</h3> */}
+                <div>
+                    <h1>{props.data.name}</h1>
+                    <h2>{props.data.description}</h2>
+                    {/* <h3>{props.data.rating} Stars</h3> */}
+                </div>
 
             </Link>
-        </Spacing>
+        </div>
     )
 }

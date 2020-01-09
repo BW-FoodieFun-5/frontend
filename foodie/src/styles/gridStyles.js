@@ -30,10 +30,10 @@ export const StyledGrid = styled.div`
     }
 
     a {
-        background-color: #593333;
+        // background-color: #593333;
         color: orangered;
         margin-bottom: 20px;
         padding: 0;
-        // width: 25%;   
+        width: 100%;   
     } 
 `;
