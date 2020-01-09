@@ -10,7 +10,7 @@ export default function AddRestaurant(props) {
     return (
         <StyledForm>
             <Formik initialValues={{ name: '', cuisineType: '', location: '', hoursOperation: '', rating: '', review: '', description: '', image: '' }}
-                    onSubmit={(values) => {
+                onSubmit={(values) => {
                     console.log(values)
 
                     axiosWithAuth()
@@ -20,46 +20,57 @@ export default function AddRestaurant(props) {
                             props.history.push('/restaurantview')
                         })
                         .catch(err => console.log(err))
-                    }}
+                }}
             >
-            <Form>
-                <span>Restaurant Name: </span>
-                <Field type='text' name='name'></Field>
+                <Form>
+                    <span>Restaurant Name: </span>
+                    <Field type='text' name='name'></Field>
 
-                <span> Short Description: </span>
-                <Field type='text' name='description'></Field>
+                    <span> Short Description: </span>
+                    <Field type='text' name='description'></Field>
 
-                <span> Cuisine Type: </span>
-                <Field type='text' name='cuisineType'></Field>
+                    <span>Cuisine Type: </span>
+                    <Field as='select' name='cuisineType'>
+                        <option value=''>Please Select One...</option>
+                        <option value='American'>American</option>
+                        <option value='Asian'>Asian</option>
+                        <option value='Barbeque'>Barbeque</option>
+                        <option value='Fastfood'>Fast Food</option>
+                        <option value='Indian'>Indian</option>
+                        <option value='Italian'>Italian</option>
+                        <option value='Mediterranean'>Mediterranean</option>
+                        <option value='Mexican'>Mexican</option>
+                        <option value='Pizza'>Pizza</option>
+                    </Field>
 
-                <span> Location: </span>
-                <Field type='text' name='location'></Field>
+                    <span> Location: </span>
+                    <Field type='text' name='location'></Field>
 
-                <span> Hours of Operation: </span>
-                <Field type='text' name='hoursOperation' ></Field>
+                    <span> Hours of Operation: </span>
+                    <Field type='text' name='hoursOperation' ></Field>
 
-                <span> Overall Rating: </span>
-                <Field name="rating" as="select" placeholder="Rating">
-                    <option value="1">1 - Star</option>
-                    <option value="2">2 - Star</option>
-                    <option value="3">3 - Star</option>
-                    <option value="4">4 - Star</option>
-                    <option value="5">5 - Star</option>
-                </Field>
+                    <span> Overall Rating: </span>
+                    <Field name="rating" as="select" placeholder="Rating">
+                        <option value="1">1 - Star</option>
+                        <option value="2">2 - Star</option>
+                        <option value="3">3 - Star</option>
+                        <option value="4">4 - Star</option>
+                        <option value="5">5 - Star</option>
+                    </Field>
 
-                <span> Comments: </span>
-                <Field type='text' name='review' ></Field>
+                    <span> Comments: </span>
+                    <Field type='text' name='review' ></Field>
 
-                <span> ImageUrl: </span>
-                <Field type='text' name='image'></Field>
+                    <span> ImageUrl: </span>
+                    <Field type='text' name='image'></Field>
 
-                {/* <span> Photo: </span><Field type='file' name='photo'></Field> */}
+                    {/* <span> Photo: </span><Field type='file' name='photo'></Field> */}
 
-                <button type='submit'>
-                    Add This Restaurant
+                    <button type='submit'>
+                        Add This Restaurant
                 </button>
-                
-            </Form>
+
+                </Form>
             </Formik>
         </StyledForm>
     )

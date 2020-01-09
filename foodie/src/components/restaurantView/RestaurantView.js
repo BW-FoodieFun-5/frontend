@@ -3,13 +3,13 @@ import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import { Link } from 'react-router-dom';
 
 import { RestaurantContext } from '../../contexts/RestaurantContext';
-
+import RestaurantFilters from '../FilterForms/RestaurantFilters'
 import { Spacing } from '../../styles/spacing';
 import { StyledGrid } from '../../styles/gridStyles';
 
 export default function RestaurantView(props) {
     console.log('context2', RestaurantContext)
-    
+
     const { restaurants, setRestaurants } = useContext(RestaurantContext)
     React.useEffect(() => {
         axiosWithAuth()
@@ -41,10 +41,13 @@ export default function RestaurantView(props) {
     // }
 
     return (
-        <StyledGrid >
-            {restaurants.map((data) => (<RestCard key={data.id} data={data} {...props} />))}
-            {/* <button onClick={handleClick}>delete id 2</button> */}
-        </StyledGrid>
+        <>
+            <RestaurantFilters state={{ restaurants, setRestaurants }} />
+            <StyledGrid >
+                {restaurants.map((data) => (<RestCard key={data.id} data={data} {...props} />))}
+                {/* <button onClick={handleClick}>delete id 2</button> */}
+            </StyledGrid>
+        </>
     )
 }
 
@@ -54,9 +57,9 @@ function RestCard(props) {
         <Spacing>
             <Link to={`/restaurant/${props.data.id}`}>
                 <Spacing>
-                    <img src={`${props.data.image}`} style={{ width: '50%'}}/>
+                    <img src={`${props.data.image}`} style={{ width: '50%' }} />
                 </Spacing>
-                
+
                 <h1>{props.data.name}</h1>
                 <h2>{props.data.description}</h2>
                 {/* <h3>{props.data.rating} Stars</h3> */}
