@@ -1,11 +1,16 @@
-import React from 'react'
-import { StyledForm } from '../../styles/formStyles'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import { Spacing } from '../../styles/spacing';
+import { StyledBottomBar } from '../../styles/bottomBarStyle';
 
 export default function LoginBar() {
+    
     return (
-        <div>
-            <Link to='/signup'>Sign up</Link>
-        </div>
+        <StyledBottomBar>
+            <Spacing>
+                <Link to='/signup'>Sign up</Link>
+            </Spacing>
+        </StyledBottomBar>
     )
 }

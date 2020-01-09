@@ -1,10 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 // export const StyledApp = styled.div`
-   
 //         display: flex;
-//         width: 100%
-         
+//         width: 100%  
 // `
 
 export const StyledApp = styled.div`
@@ -19,5 +17,4 @@ export const StyledApp = styled.div`
         //         align-items: center;
         //         // background: white;
         // }
-
 `;
