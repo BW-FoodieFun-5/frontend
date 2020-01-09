@@ -4,11 +4,11 @@ import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 import { StyledForm } from '../../styles/formStyles';
 
-
 export default function MenuFilters(props) {
 
     //{ menu, setMenu }
     return (
+
         <StyledForm>
             <Formik
                 initialValues={{ cuisineType: '', itemRating: '', filter: '', price: '' }}

@@ -1,11 +1,15 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
+// import { Link } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 import { StyledForm } from '../../styles/formStyles';
 
 export default function AddRestaurant(props) {
     console.log(props)
+
+    let history = useHistory();
 
     return (
         <StyledForm>
@@ -68,7 +72,10 @@ export default function AddRestaurant(props) {
 
                     <button type='submit'>
                         Add This Restaurant
-                </button>
+                    </button>
+                    
+                    {/* <Link to='/restaurantview' style={{ color: 'black'}}><button>Cancel</button></Link> */}
+                    <button onClick={() => {history.push('/restaurantview')}}>Cancel</button>
 
                 </Form>
             </Formik>
