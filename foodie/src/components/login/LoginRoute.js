@@ -20,7 +20,7 @@ export default function LoginRoute() {
                     <Login />
                 </StyledLogin>
 
-                <StyledBottomBar>
+                <StyledBottomBar style={{ position: 'fixed' }}>
                     <LoginBar />
                 </StyledBottomBar>
             </StyledMainPage>
