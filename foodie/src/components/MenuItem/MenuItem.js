@@ -8,6 +8,8 @@ import { MenuContext } from "../../contexts/MenuContext";
 import { LineHeight } from '../../styles/lineHeight';
 import { Spacing } from '../../styles/spacing';
 import { StyledBottomBar } from '../../styles/bottomBarStyle';
+import { StyledButton } from '../../styles/buttonStyle';
+
 // import {
 //     FavoriteRestaurantStyles,
 //     RestaurantCardButtons
@@ -58,9 +60,11 @@ export default function MenuItem() {
                         <h1 style={{ marginTop: '20px' }}>{i.itemName}</h1>
 
                         <div style={{ display: 'flex' }}>
-                            <h3 >Cuisine Type: {i.cuisineType}</h3>
+                            <h3>Cuisine Type: {i.cuisineType}</h3>
                             <h3>Rating: {i.itemRating}</h3>
                         </div>
+
+                        <img src={i.image} style={{ maxWidth: '225px' }} />
 
                         <h3>Price: {i.price}</h3>
                             <p>Review: {i.itemReview}</p>
@@ -77,7 +81,7 @@ export default function MenuItem() {
             </div>
 
             <StyledBottomBar style={{ display: 'flex', justifyContent: 'center', position: 'fixed' }}>
-                <button onClick={handleReturn}>Back to Restaurant</button>
+                <StyledButton onClick={handleReturn}>Back to Restaurant</StyledButton>
             </StyledBottomBar>
         </div>
     )

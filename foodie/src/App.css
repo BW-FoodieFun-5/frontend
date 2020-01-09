@@ -1,5 +1,6 @@
   html{
     background-color:  #181212;
+    
   }
   
   
@@ -34,25 +35,13 @@ background: #E8964A;
 
 }
  */
-#menu{
-  position: absolute;
-  top: 64px;
-  right: 0px;
-  background-color:  #C45228;
-  margin: 0;
-  padding: 0;
-  display: none;
-}
 
- .hidden{
-   display: none;
- }
 
-a{
+a {
   text-decoration: none;
   margin: 0;
   padding: 0;
-  color: white;
+  /* color: white; */
 }
 
 .reviewBox {
