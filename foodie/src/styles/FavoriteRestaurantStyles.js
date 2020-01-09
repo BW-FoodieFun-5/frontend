@@ -1,20 +1,17 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const FavoriteRestaurantStyles = styled.div `
+export const FavoriteRestaurantStyles = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align:center
 
-display: flex;
-flex-direction: column;
-align-items: center;
-text-align:center
+    * {
+       color: #C45228
+    }
 
-
-*{
-    color: #C45228
-}
-button{
-    width: 47%;
-    color: black;
-}
-
-
-`
+    button {
+        width: 47%;
+        color: black;
+    }
+`;
