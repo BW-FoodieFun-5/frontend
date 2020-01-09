@@ -78,14 +78,20 @@ export default function TestPUT() {
               </LineHeight>
 
               <LineHeight>
+
+                
                 <MenuFilters state={{ menu, setMenu }} />
                 <h2 style={{ textAlign: 'center' }}>Menu Items:</h2>
+
 
                 {menu.map(i => {
                   if (i.restaurants_id == id) {
                     return <div style={{ textAlign: 'center', marginBottom: '20px' }} key={i.id}>
-                      <h4>{i.itemName} - {i.itemRating} Stars</h4>
-                      <button onClick={() => history.push(`/menureview/${i.id}`)}>View Item</button> </div>
+
+                            <h3>{i.itemName} - {i.itemRating} Stars</h3>
+                            <img src={i.image} style={{ maxWidth: '225px', marginBottom: '10px'}} />
+                            <button onClick={() => history.push(`/menureview/${i.id}`)}>View Item</button> </div>
+
                   }
                 })}
               </LineHeight>

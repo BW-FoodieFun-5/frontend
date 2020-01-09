@@ -19,6 +19,7 @@ export const StyledGrid = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     background-color: #181212;
+    margin-bottom: 8vh;
 
     h1 {
         margin-left: 20px;
@@ -29,10 +30,10 @@ export const StyledGrid = styled.div`
     }
 
     a {
-        background-color: #593333;
+        // background-color: #593333;
         color: orangered;
         margin-bottom: 20px;
         padding: 0;
-        // width: 25%;   
+        width: 100%;   
     } 
 `;
