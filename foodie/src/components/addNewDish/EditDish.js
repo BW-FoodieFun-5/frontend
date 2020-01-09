@@ -1,42 +1,44 @@
 import React from 'react';
-import { Formik, Form, Field } from 'formik'
-import { axiosWithAuth } from '../../utils/axiosWithAuth';
-import { StyledForm } from '../../styles/formStyles';
-import { MenuContext } from '../../contexts/MenuContext'
-import { Spacing } from '../../styles/spacing'
-import { ReviewBox } from '../../styles/reviewBox';
+import { Formik, Form, Field } from 'formik';
 import { useParams, useHistory } from 'react-router-dom';
+import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
+import { MenuContext } from '../../contexts/MenuContext';
 
+import { StyledForm } from '../../styles/formStyles';
+import { Spacing } from '../../styles/spacing';
+import { ReviewBox } from '../../styles/reviewBox';
 
 export default function EditDish() {
 
     let { id } = useParams();
     let history = useHistory();
+
     const { menu, setMenu } = React.useContext(MenuContext);
     const target = menu.filter(i => i.id == id)
     console.log('target', target)
+
     return (
         <StyledForm>
             <Spacing>
-            <Formik
-                initialValues={{ ...target[0] }}
-                onSubmit={(values) => {
-                    console.log(values)
+                <Formik initialValues={{ ...target[0] }} 
+                        onSubmit={(values) => {
+                        console.log(values);
 
-                    axiosWithAuth()
-                        .put(`https://foodie-fun-chards.herokuapp.com/api/menu/${id}`, { ...values })
-                        .then(response => {
-                            console.log(response);
-                            history.push(`/menureview/${id}`)
-                        })
-                        .catch(error => console.log(error))
+                        axiosWithAuth()
+                            .put(`https://foodie-fun-chards.herokuapp.com/api/menu/${id}`, { ...values })
+                            .then(response => {
+                                console.log(response);
+                                history.push(`/menureview/${id}`)
+                            })
+                            .catch(error => console.log(error))
 
-                }}
-            >
+                        }}
+                >
 
                 <Form>
                     <h1 style={{color: '#C45228'}}>Edit Item</h1>
+
                     <span>Item Name: </span>
                     <Field type='text' name='itemName'></Field>
 
@@ -86,8 +88,9 @@ export default function EditDish() {
                     <button type='submit'>
                         Submit Edit
                     </button>
+                    
                 </Form>
-            </Formik>
+                </Formik>
             </Spacing>
         </StyledForm>
     )
