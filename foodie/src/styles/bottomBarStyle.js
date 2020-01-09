@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledBottomBar = styled.div`
-    position: relative;
+    position: fixed;
     left: 0;
     bottom: 0;
     height: 8vh;

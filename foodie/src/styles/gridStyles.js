@@ -19,6 +19,7 @@ export const StyledGrid = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     background-color: #181212;
+    margin-bottom: 8vh;
 
     h1 {
         margin-left: 20px;

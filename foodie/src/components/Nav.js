@@ -41,7 +41,7 @@ function Nav() {
         </svg>
       </div>
 
-      <div id="menu">
+      <div id="menu" className="hidden">
         
         <DropDown>
           <Link>Home</Link>
