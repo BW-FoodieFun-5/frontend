@@ -88,9 +88,11 @@ export default function TestPUT() {
           );
         }
       })}
-      <button onClick={handleAdd}>Add Item Review</button>
-      <button onClick={handleEdit}>Edit Restaurant</button>
-      <button onClick={handleclick}>Delete Restaurant</button>{" "}
+      
+        <button onClick={handleAdd}>Add Item Review</button><br/>
+        <button onClick={handleEdit}>Edit Restaurant</button><br/>
+        <button onClick={handleclick}>Delete Restaurant</button>{" "}
+      
     </FavoriteRestaurantStyles>
   );
 }

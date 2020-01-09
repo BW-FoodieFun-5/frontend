@@ -54,14 +54,12 @@ export default function MenuItem() {
                         <LineHeight>
                             <Spacing style={{ flexDirection: 'column' }}>
                             {" "}
-                            <h1>{i.itemName}</h1>
+                            <h1 style={{ marginTop: '20px' }}>{i.itemName}</h1>
                             <div style={{ display: 'flex' }}>
                             <h3 >Cuisine Type: {i.cuisineType}</h3>
                             <h3>Rating: {i.itemRating}</h3>
                             </div>
                             <h3>Price: {i.price}</h3>
-                            
-
                             <p>Review: {i.itemReview}</p>
 
                             </Spacing>
@@ -73,7 +71,7 @@ export default function MenuItem() {
             <button onClick={handleEdit}>Edit Review</button>
             <button onClick={handleclick}>Delete Review</button>
             </div>
-            <StyledBottomBar style={{ display: 'flex', justifyContent: 'center' }}>
+            <StyledBottomBar style={{ display: 'flex', justifyContent: 'center', position: 'fixed' }}>
                 <button onClick={handleReturn}>Back to Restaurant</button>
             </StyledBottomBar>
         </div>

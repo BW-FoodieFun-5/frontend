@@ -51,7 +51,7 @@ export default function RestaurantView(props) {
 
 function RestCard(props) {
     return (
-
+        <Spacing>
         <Link to={`/restaurant/${props.data.id}`}>
             <Spacing>
                 <img src={`${props.data.image}`} style={{ width: '50%'}}/>
@@ -61,5 +61,6 @@ function RestCard(props) {
             {/* <h3>{props.data.rating} Stars</h3> */}
 
         </Link>
+        </Spacing>
     )
 }
