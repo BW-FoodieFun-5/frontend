@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 // import { Link } from "react-router-dom";
 import { useParams, useHistory } from "react-router-dom";
-
+import MenuFilters from './FilterForms/MenuFilter'
 import { RestaurantContext } from "../contexts/RestaurantContext";
 import { MenuContext } from "../contexts/MenuContext";
 
@@ -67,8 +67,8 @@ export default function TestPUT() {
                 <h1 style={{ textAlign: 'center', marginBottom: '10px' }}>{i.name}</h1>
 
                 <div style={{ display: 'flex' }}>
-                  <h3>Cuisine Type: { i.cuisineType }</h3>
-                  <h3>Rating: { i.rating }</h3>
+                  <h3>Cuisine Type: {i.cuisineType}</h3>
+                  <h3>Rating: {i.rating}</h3>
                 </div>
 
                 <h3>Hours of Operation: {i.hoursOperation}</h3>
@@ -78,14 +78,20 @@ export default function TestPUT() {
               </LineHeight>
 
               <LineHeight>
-                <h2 style={{ textAlign: 'center' }}>Menu Items</h2>
+
+                
+                <MenuFilters state={{ menu, setMenu }} />
+                <h2 style={{ textAlign: 'center' }}>Menu Items:</h2>
+
 
                 {menu.map(i => {
                   if (i.restaurants_id == id) {
                     return <div style={{ textAlign: 'center', marginBottom: '20px' }} key={i.id}>
+
                             <h3>{i.itemName} - {i.itemRating} Stars</h3>
                             <img src={i.image} style={{ maxWidth: '225px', marginBottom: '10px'}} />
                             <button onClick={() => history.push(`/menureview/${i.id}`)}>View Item</button> </div>
+
                   }
                 })}
               </LineHeight>
@@ -93,11 +99,11 @@ export default function TestPUT() {
           );
         }
       })}
-      
-      <button onClick={handleAdd}>Add Item Review</button><br/>
-      <button onClick={handleEdit}>Edit Restaurant</button><br/>
+
+      <button onClick={handleAdd}>Add Item Review</button><br />
+      <button onClick={handleEdit}>Edit Restaurant</button><br />
       <button onClick={handleclick}>Delete Restaurant</button>{" "}
-      
+
     </FavoriteRestaurantStyles>
   );
 }
