@@ -16,7 +16,7 @@ export default function RestaurantFilters(props) {
     return (
         <StyledForm>
 
-            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px'}}>
+            <div style={{ display: 'flex', justifyContent: 'center'}}>
                 <button style={{ width: '104px' }}onClick={toggle}>Sort</button>
             </div>
             <div id='formfilter' className='hidefilter'>
