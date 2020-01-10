@@ -88,9 +88,9 @@ export default function TestPUT() {
                 </div>
 
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                  <button style={{ width: '30%' }} onClick={handleAdd}>Add Item Review</button><br />
-                  <button style={{ width: '30%' }} onClick={handleEdit}>Edit Restaurant</button><br />
-                  <button style={{ width: '30%' }} onClick={handleclick}>Delete Restaurant</button>{" "}
+                  <button style={{ width: '30%', margin: '0 2%' }} onClick={handleAdd}>Add Item Review</button><br />
+                  <button style={{ width: '30%', margin: '0 2%' }} onClick={handleEdit}>Edit Restaurant</button><br />
+                  <button style={{ width: '30%', margin: '0 2%' }} onClick={handleclick}>Delete Restaurant</button>{" "}
                 </div>
 
                 <h2 style={{ textAlign: 'center' }}>Menu Items:</h2>
