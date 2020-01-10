@@ -64,7 +64,7 @@ export default function TestPUT() {
             <div style={{ marginTop: '10px' }}>
               <LineHeight>
                 {" "}
-                <h1 style={{ textAlign: 'center', marginBottom: '10px' }}>{i.name}</h1>
+                <h1 style={{ textAlign: 'center', marginBottom: '10px', fontSize: '40px' }}>{i.name}</h1>
 
                 <div style={{ display: 'flex' }}>
                   <h3>Cuisine Type: {i.cuisineType}</h3>
@@ -75,28 +75,30 @@ export default function TestPUT() {
                   <img src={i.image} style={{ maxWidth: '225px', marginBottom: '10px'}} />
                 </div>
 
-                <h3>Hours of Operation: {i.hoursOperation}</h3>
-                <h4>Description: {i.description}</h4>
-                <h4>Review: {i.review}</h4>
+                <h3 style={{ margin: '0 0 0 10px', lineHeight: '1.5em'}}>Hours of Operation: {i.hoursOperation}</h3>
+                <h4 style={{ margin: '0 0 0 10px', lineHeight: '1.5em'}}>Description: {i.description}</h4>
+                <h4 style={{ margin: '0 0 10px 10px', lineHeight: '1.5em'}}>Review: {i.review}</h4>
 
               </LineHeight>
 
               <LineHeight>
 
-                
-                <MenuFilters state={{ menu, setMenu }} />
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                  <MenuFilters state={{ menu, setMenu }} />
+                </div>
 
-                <button onClick={handleAdd}>Add Item</button><br />
-                <button onClick={handleEdit}>Edit Restaurant</button><br />
-                <button onClick={handleclick}>Delete Restaurant</button>{" "}
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <button style={{ width: '30%', height: '40px', margin: '0 2%' }} onClick={handleAdd}>Add Item Review</button><br />
+                  <button style={{ width: '30%', height: '40px', margin: '0 2%' }} onClick={handleEdit}>Edit Restaurant</button><br />
+                  <button style={{ width: '30%', height: '40px', margin: '0 2%' }} onClick={handleclick}>Delete Restaurant</button>{" "}
+                </div>
 
-                <h2 style={{ textAlign: 'center' }}>Menu Items:</h2>
+                <h2 style={{ textAlign: 'center', paddingBottom: '20px', marginBottom: 0, borderBottom: 'solid white 2px', fontSize: '30px' }}>Menu Items</h2>
 
                 {menu.map(i => {
                   if (i.restaurants_id == id) {
-                    return <div style={{ textAlign: 'center', marginBottom: '20px' }} key={i.id}>
-
-                            <h3>{i.itemName} - {i.itemRating} Stars</h3>
+                    return <div style={{ textAlign: 'center', padding: '0 0 40px 20px', borderBottom: 'solid white 2px'}} key={i.id}>
+                            <h3 style={{ paddingTop: '10px'}}>{i.itemName} - {i.itemRating} Stars</h3>
                             <img src={i.image} style={{ maxWidth: '225px', marginBottom: '10px'}} />
                             <button onClick={() => history.push(`/menureview/${i.id}`)}>View Item</button> </div>
 
