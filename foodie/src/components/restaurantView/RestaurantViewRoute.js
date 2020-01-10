@@ -13,7 +13,7 @@ export default function RestaurantViewRoute(props) {
     return (
 
         <StyledApp>
-            <h1 style={{color: '#C45228', textAlign: 'center' }}>Restaurants</h1>
+            <h1 style={{color: '#C45228', textAlign: 'center', marginBottom: 0, fontSize: '48px' }}>Restaurants</h1>
 
             <StyledMainPage>
                 <StyledLogin>

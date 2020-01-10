@@ -6,10 +6,20 @@ import { StyledForm } from '../../styles/formStyles';
 
 export default function MenuFilters(props) {
 
+    function toggle() {
+
+        document.getElementById("formfilter").classList.toggle("hidefilter");
+      }
+
     //{ menu, setMenu }
     return (
 
         <StyledForm>
+            <>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px'}}>
+                <button style={{ width: '104px' }}onClick={toggle}>Sort</button>
+            </div>
+            <div id='formfilter' className='hidefilter'>
             <Formik
                 initialValues={{ cuisineType: '', itemRating: '', filter: '', price: '' }}
                 onSubmit={(values) => {
@@ -32,7 +42,7 @@ export default function MenuFilters(props) {
 
                 }}
             >
-
+                
                 <Form>
                     <span>Filter Menu by:</span>
 
@@ -79,13 +89,17 @@ export default function MenuFilters(props) {
                         <option value='Expensive'>$$$ - Expensive</option>
                     </Field>
 
-                    <button type='submit'>
-                        Filter
-                    </button>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <button type='submit'>
+                            Filter
+                        </button>
+                    </div>
 
                 </Form>
 
             </Formik>
+            </div>
+            </>
         </StyledForm>
     )
 }

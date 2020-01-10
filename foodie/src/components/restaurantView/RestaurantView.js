@@ -11,6 +11,9 @@ export default function RestaurantView(props) {
     console.log('context2', RestaurantContext)
 
     const { restaurants, setRestaurants } = useContext(RestaurantContext)
+
+    console.log(props, 'in rest view')
+    console.log(restaurants)
     React.useEffect(() => {
         axiosWithAuth()
             .get('https://foodie-fun-chards.herokuapp.com/api/restaurants')
@@ -39,7 +42,7 @@ export default function RestaurantView(props) {
     //         })
     //         .catch(err => console.log(err))
     // }
-
+console.log(props, 'not in restcard')
     return (
         <>
             <RestaurantFilters state={{ restaurants, setRestaurants }} />
@@ -52,17 +55,19 @@ export default function RestaurantView(props) {
 }
 
 function RestCard(props) {
+
+    console.log(props, 'In restcard')
     return (
 
         <div>
             <Link to={`/restaurant/${props.data.id}`}>
                 <Spacing>
 
-                    <img src={`${props.data.image}`} style={{ maxWidth: '225px'}}/>
+                    <img src={`${props.data.image}`} style={{ maxWidth: '225px', paddingTop: '50px'}}/>
                 </Spacing>
                 <div>
-                    <h1>{props.data.name}</h1>
-                    <h2>{props.data.description}</h2>
+                    <h1 style={{ padding: '10px 0 10px 20px', margin: 0}}>{props.data.name}</h1>
+                    <h2 style={{ padding: '0 0 50px 20px', margin: 0, borderBottom: 'solid white 2px'}}>{props.data.description}</h2>
                     {/* <h3>{props.data.rating} Stars</h3> */}
                 </div>
 

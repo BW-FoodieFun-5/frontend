@@ -25,6 +25,7 @@ export const StyledForm = styled.div`
 
         button {
             margin-top: 2%;
+        
         }
         input {
             margin-top: 2%;
