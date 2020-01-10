@@ -51,3 +51,9 @@ a {
 span {
   color: #C45228;
 }
+
+
+
+.hidefilter {
+  display: none;
+}

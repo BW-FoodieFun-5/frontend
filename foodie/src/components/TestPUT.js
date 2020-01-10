@@ -83,12 +83,15 @@ export default function TestPUT() {
 
               <LineHeight>
 
-                
-                <MenuFilters state={{ menu, setMenu }} />
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                  <MenuFilters state={{ menu, setMenu }} />
+                </div>
 
-                <button onClick={handleAdd}>Add Item</button><br />
-                <button onClick={handleEdit}>Edit Restaurant</button><br />
-                <button onClick={handleclick}>Delete Restaurant</button>{" "}
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <button style={{ width: '30%' }} onClick={handleAdd}>Add Item Review</button><br />
+                  <button style={{ width: '30%' }} onClick={handleEdit}>Edit Restaurant</button><br />
+                  <button style={{ width: '30%' }} onClick={handleclick}>Delete Restaurant</button>{" "}
+                </div>
 
                 <h2 style={{ textAlign: 'center' }}>Menu Items:</h2>
 
